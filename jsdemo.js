@@ -8,8 +8,8 @@
  fs.mkdirSync('css') // mkdir css
  fs.mkdirSync('js') // mkdir js
 
- fs.writeFileSync("./index.html", " <!DOCTYPE>;<title>Hello</title>;<h1>Hi</h1>")
+ fs.writeFileSync("./index.html", " <!DOCTYPE>/n <title>Hello</title>/n <h1>Hi</h1>")
  fs.writeFileSync("css/style.css", "h1{color: red;}")
- fs.writeFileSync("./js/main.js", " var string = 'Hello World';alert(string)")
+ fs.writeFileSync("./js/main.js", " var string = 'Hello World' /n alert(string)")
 
  process.exit(0)
