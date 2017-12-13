@@ -2,7 +2,6 @@
 
  var dirName = process.argv[2] // 你传的参数是从第 2 个开始的
 
- process.chdir("/Users/lee/Desktop") // cd ~/Desktop
  fs.mkdirSync("./" + dirName) // mkdir $1
  process.chdir("./" + dirName) // cd $1
  fs.mkdirSync('css') // mkdir css
