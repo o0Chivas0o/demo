@@ -6,13 +6,17 @@ let keys = {
 }
 let hash = {q:'qq.com', w:'weibo.com', e:'ele.me', r:'renren.com', t:'taobao.com', y:'youtube.com', u:'uc.com', i:'iqiyi.com', o:undefined, p:undefined, a:'acfun.tv', s:'souhu.com', d:undefined, f:'facebook.com', g:'google.com', h:undefined, j:'jd.com', k:undefined, l:undefined, z:'zhihu.com', x:undefined, c:undefined, v:undefined, b:'baidu.com', n:undefined, m:undefined, length:27
 }
+let hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || '')
+if(hashInLocalStorage){
+  hash = hashInLocalStorage
+}
 for(let i = 0;i<keys.length;i++){
-  div = document.createElement('div')
+  let div = document.createElement('div')
   main.appendChild(div)
-  row = keys[i]
+  let row = keys[i]
   for(let i = 0;i<row.length;i++){
-    kbd = document.createElement('kbd')
-    button = document.createElement('button')
+    let kbd = document.createElement('kbd')
+    let button = document.createElement('button')
     kbd.textContent = row[i]
     button.textContent = '编辑'
     button.id = row[i]
@@ -20,6 +24,7 @@ for(let i = 0;i<keys.length;i++){
       key = e.target.id
       x = prompt('请输入新的网址')
       hash[key] = x
+      loaclStorage.setItem('zzz',Json.stringify(hash))
     }
     kbd.appendChild(button)
     div.appendChild(kbd)
