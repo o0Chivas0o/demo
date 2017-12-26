@@ -24,7 +24,7 @@ for(let i = 0;i<keys.length;i++){
       key = e.target.id
       x = prompt('请输入新的网址')
       hash[key] = x
-      loaclStorage.setItem('zzz',Json.stringify(hash))
+      localStorage.setItem('zzz',JSON.stringify(hash))
     }
     kbd.appendChild(button)
     div.appendChild(kbd)
