@@ -4,14 +4,21 @@ main{
     text-align: center;
 }
 kbd{
-    border:1px solid;
-    width: 4em;
-    height: 4em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
-    display:inline-block;
+    width: 55px;
+    height: 40px;
+    border:1px solid #373737;
+    border-radius: 7px;
+    box-shadow:0 0 0 1px #1A1B1C,0 0 0 2px #1F2020,0 3px 0 2px #080808;
+    background: linear-gradient(to bottom, #292929 0%,#111111 100%);
+    color:#C5C5C5;
+    margin: 5px 5px;
     position: relative;
-    background: white;
-    margin: 0 2px;
+    font-size:16px;
+    font-family:Helvetica;
 }
 kbd > button{
     border-radius: 4px;
@@ -27,6 +34,6 @@ kbd:hover > button{
     display: inline-block;
 }
 #main > div:nth-child(3){
-    margin-right: 4em;
+    margin-right: 70px;
 }
 
