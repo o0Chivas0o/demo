@@ -4,7 +4,7 @@ let keys = {
   2: ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
   length:3
 }
-let hash = {q:'qq.com', w:'weibo.com', e:'ele.me', r:'renren.com', t:'taobao.com', y:'youtube.com', u:'uc.com', i:'iqiyi.com', o:undefined, p:undefined, a:'acfun.tv', s:'souhu.com', d:undefined, f:'facebook.com', g:'google.com', h:undefined, j:'jd.com', k:undefined, l:undefined, z:'zhihu.com', x:undefined, c:undefined, v:undefined, b:'baidu.com', n:undefined, m:undefined, length:27
+let hash = {q:'qq.com', w:'weibo.com', e:'ele.me', r:'renren.com', t:'taobao.com', y:'youtube.com', u:'uc.cn', i:'iqiyi.com', o:undefined, p:undefined, a:'acfun.tv', s:'souhu.com', d:undefined, f:'facebook.com', g:'google.com', h:undefined, j:'jd.com', k:undefined, l:undefined, z:'zhihu.com', x:undefined, c:undefined, v:undefined, b:'baidu.com', n:undefined, m:undefined, length:27
 }
 let hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
 if(hashInLocalStorage){
@@ -17,6 +17,15 @@ for(let i = 0;i<keys.length;i++){
   for(let i = 0;i<row.length;i++){
     let kbd = document.createElement('kbd')
     let button = document.createElement('button')
+    let img = document.createElement('img')
+    if(hash[row[i]]){
+      img.src = 'http://' + hash[row[i]] + '/favicon.ico'
+      img.style.width = 18+'px'
+      img.style.height = 18+'px'
+    }else{
+      img.src = '//i.loli.net/2017/12/26/5a425c3ed060d.jpg'
+      img.style.width = 0
+    }
     kbd.textContent = row[i]
     button.textContent = '编辑'
     button.id = row[i]
@@ -26,6 +35,7 @@ for(let i = 0;i<keys.length;i++){
       hash[key] = x
       localStorage.setItem('zzz',JSON.stringify(hash))
     }
+    kbd.appendChild(img)
     kbd.appendChild(button)
     div.appendChild(kbd)
   }

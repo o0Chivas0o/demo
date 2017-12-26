@@ -19,7 +19,15 @@ main{
     border-radius: 20px;
 }
 kbd{display: inline-flex;justify-content: center;align-items: center;text-transform: uppercase;width: 80px;height: 60px;border:1px solid #373737;border-radius: 7px;box-shadow:0 0 0 1px #1A1B1C,0 0 0 2px #1F2020,0 3px 0 2px #080808;background: linear-gradient(to bottom, #292929 0%,#111111 100%);color:#C5C5C5;margin: 10px 10px;position: relative;font-size:16px;font-family:Helvetica;}
+kbd > img{
+    position: absolute;
+    top:0;
+    left:0;
+}
 kbd > button{
+    border:none;
+    background: #409eff;
+    color:#f6fafe;
     border-radius: 4px;
     position: absolute;
     right:0;
@@ -27,6 +35,9 @@ kbd > button{
     display: none;
 }
 kbd:hover{
+    background: grey;
+}
+kbd.active{
     background: grey;
 }
 kbd:hover > button{
