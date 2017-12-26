@@ -6,7 +6,7 @@ let keys = {
 }
 let hash = {q:'qq.com', w:'weibo.com', e:'ele.me', r:'renren.com', t:'taobao.com', y:'youtube.com', u:'uc.com', i:'iqiyi.com', o:undefined, p:undefined, a:'acfun.tv', s:'souhu.com', d:undefined, f:'facebook.com', g:'google.com', h:undefined, j:'jd.com', k:undefined, l:undefined, z:'zhihu.com', x:undefined, c:undefined, v:undefined, b:'baidu.com', n:undefined, m:undefined, length:27
 }
-let hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || '')
+let hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
 if(hashInLocalStorage){
   hash = hashInLocalStorage
 }
