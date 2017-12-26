@@ -37,9 +37,6 @@ kbd > button{
 kbd:hover{
     background: grey;
 }
-kbd.active{
-    background: grey;
-}
 kbd:hover > button{
     display: inline-block;
 }
