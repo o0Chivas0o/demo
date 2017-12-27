@@ -28,15 +28,11 @@ for(let i = 0;i<keys.length;i++){
 
     if(hash[row[i]]){
       img.src = 'http://' + hash[row[i]] + '/favicon.ico'
-      img.style.width = 18+'px'
-      img.style.height = 18+'px'
     }else{
-      img.src = '//i.loli.net/2017/12/26/5a425c3ed060d.jpg'
-      img.style.width = 0
+      img.src = '//i.loli.net/2017/12/27/5a436455276ed.jpg'
     }
     img.onerror = function(e){
-      e.target.src = '//i.loli.net/2017/12/26/5a425c3ed060d.jpg'
-      src.style.width = 0
+      e.target.src = '//i.loli.net/2017/12/27/5a436455276ed.jpg'
     }
 
     kbd.textContent = row[i]
@@ -51,11 +47,8 @@ for(let i = 0;i<keys.length;i++){
       x = prompt('请输入新的网址')
       hash[key] = x
       img2.src = img.src = 'http://' + hash[row[i]] + '/favicon.ico'
-      img2.style.width = 18+'px'
-      img2.style.height = 18+'px'
       img2.onerror = function(xxx){
-        xxx.target.src = '//i.loli.net/2017/12/26/5a425c3ed060d.jpg'
-        src.style.width = 0
+        xxx.target.src = '//i.loli.net/2017/12/27/5a436455276ed.jpg'
       }
       localStorage.setItem('zzz',JSON.stringify(hash))
     }
