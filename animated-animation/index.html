@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+</style>
+<body>
+<div id="div1"></div>
+<script>
+    div1.style.position = 'relative'
+    div1.style.left = 0
+
+    let n = 0
+    let id = setInterval( ()=> {
+      n = n + 2
+      div1.style.left = n+'px'
+      if(n>=300){
+        window.clearInterval(id)
+      }
+    },40)
+</script>
+</body>
+</html>
