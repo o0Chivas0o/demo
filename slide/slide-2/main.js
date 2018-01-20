@@ -24,10 +24,10 @@ for (let i = 0; i < allButtons.length; i++) {
       transform: `translateX(${p}px)`
     })
     n = index    //
-    allButtons.eq(n).addClass('red')
-      .siblings('.red').removeClass('red')
+    activeButton(allButtons.eq(n))
   })
 }
+
 
 //dom获取自己是第几个方法
 // let n
@@ -39,23 +39,30 @@ for (let i = 0; i < allButtons.length; i++) {
 // }
 
 // 设置定时器 自动轮播
-let n = 0
+let n = 0;
 let size = allButtons.length
+allButtons.eq(n % size).trigger('click')
 
-let timerId = setInterval(() => {
-  n += 1
-  allButtons.eq(n % size).trigger('click').addClass('red')
+
+let timerId = setTimer()
+
+function setTimer() {
+  return setInterval(() => {
+    n += 1
+    allButtons.eq(n % size).trigger('click')
+  }, 3000)
+}
+
+function activeButton($button) {
+  $button
+    .addClass('red')
     .siblings('.red').removeClass('red')
-},3000)
+}
 
-$('.windows').on('mouseenter',function(){
+$('.window').on('mouseenter', function() {
   window.clearInterval(timerId)
 })
 
-$('.windows').on('mouseleave',function(){
-  timerId = setInterval(() => {
-    n += 1
-    allButtons.eq(n % size).trigger('click').addClass('red')
-      .siblings('.red').removeClass('red')
-  },3000)
+$('.window').on('mouseleave', function() {
+  timerId = setTimer()
 })
