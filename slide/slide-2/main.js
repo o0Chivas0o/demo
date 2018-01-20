@@ -39,8 +39,20 @@ for (let i = 0; i < allButtons.length; i++) {
 let n = 0
 let size = allButtons.length
 
-setInterval(() => {
+let timerId = setInterval(() => {
   n += 1
   allButtons.eq(n % size).trigger('click').addClass('red')
     .siblings('.red').removeClass('red')
 },3000)
+
+$('.windows').on('mouseenter',function(){
+  window.clearInterval(timerId)
+})
+
+$('.windows').on('mouseleave',function(){
+  timerId = setInterval(() => {
+    n += 1
+    allButtons.eq(n % size).trigger('click').addClass('red')
+      .siblings('.red').removeClass('red')
+  },3000)
+})
