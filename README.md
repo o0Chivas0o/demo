@@ -6,3 +6,7 @@
 2. 快捷导航栏预览地址:https://o0chivas0o.github.io/new-demo/nav-demo
 
 3. 缓动动画预览地址:https://o0chivas0o.github.io/new-demo/animated-animation
+
+4. 轮播预览地址:
+https://o0chivas0o.github.io/new-demo/slide/slide-1
+https://o0chivas0o.github.io/new-demo/slide/slide-2
