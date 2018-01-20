@@ -19,10 +19,13 @@ let allButtons = $('.buttons > span')
 for (let i = 0; i < allButtons.length; i++) {
   $(allButtons[i]).on('click', function (e) { // allButtons[i] 是一个dom对象 不是jquery对象
     let index = $(e.currentTarget).index()    // dom获取自己是第几个元素的方法我写下面
-    let n = index * -300
+    let p = index * -300
     $('.images').css({
-      transform: `translateX(${n}px)`
+      transform: `translateX(${p}px)`
     })
+    n = index    //
+    allButtons.eq(n).addClass('red')
+      .siblings('.red').removeClass('red')
   })
 }
 
