@@ -7,4 +7,4 @@
 
 3. 缓动动画预览地址:https://o0chivas0o.github.io/new-demo/animated-animation
 
-4. 轮播预览地址:https://o0chivas0o.github.io/new-demo/slide/README.md
+4. 轮播预览地址:https://o0chivas0o.github.io/new-demo/slide/
