@@ -35,4 +35,12 @@ for (let i = 0; i < allButtons.length; i++) {
 //     console.log(n) // 打出n是第几个元素
 // }
 
+// 设置定时器 自动轮播
+let n = 0
+let size = allButtons.length
 
+setInterval(() => {
+  n += 1
+  allButtons.eq(n % size).trigger('click').addClass('red')
+    .siblings('.red').removeClass('red')
+},3000)
