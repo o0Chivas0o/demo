@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>slide-1</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+
+    .windows {
+        border: 1px solid;
+        width: 300px;
+        overflow: hidden;
+    }
+
+    .images {
+        display: flex;
+        align-items: flex-start;
+        transition: transform .5s;
+    }
+</style>
+<body>
+<div class="windows">
+    <div class="images">
+        <img src="//pbs.twimg.com/profile_images/655274433242726404/j7x5Zqyu_400x400.jpg" width="300">
+        <img src="//img114.pp.sohu.com/images/blog/2007/3/3/22/0/111aecd15a6.png" width="300">
+        <img src="//scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18161153_1874975179383114_5528826776400166912_n.jpg"
+             width="300">
+    </div>
+</div>
+<button id="p1">第1张</button>
+<button id="p2">第2张</button>
+<button id="p3">第3张</button>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+<script>
+  $('#p1').on('click', function () {
+    $('.images').css({
+      transform: 'translateX(0)'
+    })
+  })
+  $('#p2').on('click', function () {
+    $('.images').css({
+      transform: 'translateX(-300px)'
+    })
+  })
+  $('#p3').on('click', function () {
+    $('.images').css({
+      transform: 'translateX(-600px)'
+    })
+  })
+</script>
+</html>
