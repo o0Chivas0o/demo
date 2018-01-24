@@ -1,37 +1,41 @@
-*{margin: 0;padding: 0;box-sizing: border-box}
-.window{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.window {
     width: 300px;
     height: 300px;
     margin: 20px auto;
     overflow: hidden;
 }
 
-.image{
+.image {
     position: relative;
 }
 
-.image >img{
+.image > img {
     width: 100%;
     transition: all .3s;
+    position: absolute;
+    top: 0;
 }
 
-.image >img:nth-child(1){
-    position: absolute;
-    top: 0;
+.image > img.current {
     left: 0;
+    transform: translateX(0);
+    z-index: 1;
 }
-.image >img:nth-child(2){
-    position: absolute;
-    top: 0;
-    left: 100%;
+
+.image > img.leave {
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 1;
 }
-.image >img:nth-child(3){
-    position: absolute;
-    top: 0;
-    left: 100%;
+
+.image > img.enter {
+    left: 0;
+    transform: translateX(100%);
 }
-.image >img.right{
-    position: absolute;
-    top:0;
-    left: 100%;
-}
+
