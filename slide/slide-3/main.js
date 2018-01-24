@@ -1,17 +1,20 @@
-$('.image > img:nth-child(1)').addClass('current')
-$('.image > img:nth-child(2)').addClass('enter')
-$('.image > img:nth-child(3)').addClass('enter')
-let n = 1
+let n
+init.call(undefined)
 setInterval(() => {
-  $(`.image > img:nth-child(${x(n)})`).removeClass('current').addClass('leave')
+  toCurrent.call(undefined,getN.call(undefined,n))
     .one('transitionend', (e) => {
-    $(e.currentTarget).removeClass('leave').addClass('enter')
+      toLeave.call(undefined,$(e.currentTarget))
   })
-  $(`.image > img:nth-child(${x(n + 1)})`).removeClass('enter').addClass('current')
+  toEnter.call(undefined,getN.call(undefined,n+1))
   n += 1
-}, 3000)
+}, 2000)
 
-function x (n) {
+
+
+
+
+// 封装代码
+function calculateN (n) {
   if (n > 3) {
     n = n % 3
     if (n === 0) {
@@ -19,4 +22,23 @@ function x (n) {
     }
   }
   return n
+}
+function getN(n){
+  return $(`.image > img:nth-child(${calculateN.call(undefined,n)})`)
+}
+function init(){
+  $('.image > img:nth-child(1)').addClass('current')
+  $('.image > img:nth-child(2)').addClass('enter')
+  $('.image > img:nth-child(3)').addClass('enter')
+  n = 1
+}
+
+function toCurrent($node){
+ return $node.removeClass('current enter').addClass('leave')
+}
+function toLeave($node){
+  return $node.removeClass('leave current').addClass('enter')
+}
+function toEnter($node){
+  return $node.removeClass('enter leave').addClass('current')
 }
