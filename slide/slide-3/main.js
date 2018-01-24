@@ -7,7 +7,10 @@ setInterval(() => {
   })
   toEnter.call(undefined,getN.call(undefined,n+1))
   n += 1
-}, 2000)
+}, 1200)
+
+
+
 
 
 
