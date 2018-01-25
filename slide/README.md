@@ -8,6 +8,8 @@
 有缝轮播顺序为：1232 1232  
   
 无缝轮播顺序为：123 123  
+  
+slide-3 有BUG 全部作废
 
 ### demo
 1. slide-1预览:https://o0chivas0o.github.io/new-demo/slide/slide-1

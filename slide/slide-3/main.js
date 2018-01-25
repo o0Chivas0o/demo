@@ -1,6 +1,6 @@
 let n
 init.call(undefined)
-setInterval(() => {
+let timer = setInterval(() => {
   toCurrent.call(undefined,getN.call(undefined,n))
     .one('transitionend', (e) => {
       toLeave.call(undefined,$(e.currentTarget))
@@ -9,6 +9,20 @@ setInterval(() => {
   n += 1
 }, 1200)
 
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden){
+    window.clearInterval(timer)
+  }else{
+    timer = setInterval(() => {
+      toCurrent.call(undefined,getN.call(undefined,n))
+        .one('transitionend', (e) => {
+          toLeave.call(undefined,$(e.currentTarget))
+        })
+      toEnter.call(undefined,getN.call(undefined,n+1))
+      n += 1
+    }, 1200)
+  }
+})
 
 
 
