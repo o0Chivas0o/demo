@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>时间模型可视化</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        .red.active {
+            background: red;
+        }
+        .blue.active {
+            background: blue;
+        }
+        .green.active {
+            background: green;
+        }
+        .yellow.active {
+            background: yellow;
+        }
+        .orange.active {
+            background: orange;
+        }
+        .purple.active {
+            background: purple;
+        }
+        div {
+            margin: 0 auto;
+            border: 1px solid black;
+            padding: 10px;
+            transition: all 0.5s;
+            display: flex;
+            flex:1;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .red{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="red">
+    <div class="blue">
+        <div class="green">
+            <div class="yellow">
+                <div class="orange">
+                    <div class="purple">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../jquery-3.3.1.min.js"></script>
+<script>
+  let divs = $('div').get()
+  let n = 0
+  // 捕获阶段
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', () => {
+      setTimeout(() => {
+        divs[i].classList.add('active')
+      }, n * 500)
+      n += 1
+    }, true)
+  }
+  //冒泡阶段
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', () => {
+      setTimeout(() => {
+        divs[i].classList.remove('active')
+      }, n * 500)
+      n += 1
+    })
+  }
+</script>
+</body>
+</html>
