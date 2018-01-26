@@ -7,6 +7,7 @@ makeFakeSlides()
 $slides.css({transform: 'translateX(-300px)'})
 bindEvents()
 
+// 监听按钮 上一张 下一张
 $(pre).on('click',()=>{
   goToSlide(current - 1)
 })
@@ -14,11 +15,12 @@ $(next).on('click',()=>{
   goToSlide(current + 1)
 })
 
+// 自动轮播
 let timer = setInterval(()=>{
   goToSlide(current+1)
 },1500)
-
-$('.container').on('mouseenter',()=>{
+// 移动到窗口停止轮播,移出继续轮播
+$('.window').on('mouseenter',()=>{
   window.clearInterval(timer)
 }).on('mouseleave',()=>{
   timer = setInterval(()=>{
@@ -26,6 +28,7 @@ $('.container').on('mouseenter',()=>{
   },1500)
 })
 
+// 优化代码
 function bindEvents () {
   $('.buttons').on('click', 'button', (e) => {
     let $button = $(e.currentTarget)
@@ -77,6 +80,7 @@ function makeFakeSlides () {
   $slides.append($firstCopy) // 把第一张放到最后一张后面
   $slides.prepend($lastCopy) // 把最后一张放到第一张前面
 }
+
 function goToSlide(index){
   if(index>$buttons.length-1){
     index = 0
