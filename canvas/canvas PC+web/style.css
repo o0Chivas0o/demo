@@ -1,0 +1,58 @@
+*{margin: 0;padding: 0;box-sizing:border-box}
+ol,ul{list-style: none}
+body{
+    overflow: hidden;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    fill: currentColor;
+    overflow: hidden;
+    margin-top: 5px;
+}
+#canvas{
+    background: #dddddd;
+}
+.actions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+}
+.actions > li.active{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+.actions >li.active > svg{
+    height: 30px;
+    width: 30px;
+}
+.color{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+}
+.color >li{
+    margin: 5px 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.color >li.select{
+    width: 20px;
+    height: 20px;
+}
+#red{
+    background: red;
+}
+#yellow{
+    background: yellow;
+}
+#blue{
+    background: blue;
+}
+#black{
+    background: black;
+}
