@@ -1,0 +1,199 @@
+*{margin:0;padding:0;box-sizing:border-box}
+ul,ol,li{list-style: none;}
+body{
+    background: url("//i.loli.net/2017/09/27/59ca7ab9669b9.jpg")no-repeat center;
+    background-size:cover;
+}
+section.profile{
+    text-align: center;
+    margin-top: 100px;
+    cursor: pointer;
+}
+.title{
+    margin:16px auto;
+}
+.title p{
+    font-size: 16px;
+}
+.tags >span{
+    width: 80px;
+    height: 35px;
+    position: relative;
+    background: url("//i.loli.net/2017/09/27/59cbac8b18a73.png") -60px -80px no-repeat;
+}
+
+.tags >span:hover{
+    transition: .8s;
+    background-position: 100px 100px;
+}
+
+.button{
+    margin:10px auto;
+    text-align: center;
+}
+
+.loadMore {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #eae0c2), color-stop(1, #ccc2a6));
+    background:-moz-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+    background:-webkit-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+    background:-o-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+    background:-ms-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+    background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae0c2', endColorstr='#ccc2a6',GradientType=0);
+    background-color:#eae0c2;
+    -moz-border-radius:21px;
+    -webkit-border-radius:21px;
+    border-radius:21px;
+    border:2px solid #333029;
+    display:inline-block;
+    cursor:pointer;
+    color:#505739;
+    font-family:Arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:12px 16px;
+    text-decoration:none;
+}
+.loadMore:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ccc2a6), color-stop(1, #eae0c2));
+    background:-moz-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+    background:-webkit-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+    background:-o-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+    background:-ms-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+    background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
+    background-color:#ccc2a6;
+}
+.loadMore:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+@media (max-width: 768px) {
+    section.profile .tags  {
+        margin:0 auto;
+        max-width:320px;
+    }
+}
+
+@media (min-width:675px) {
+    section.slides{
+        position: relative;
+        margin-top: 30px;
+    }
+    section.slides .window{
+        overflow: hidden;
+        margin: 0 auto;
+        text-align: center;
+    }
+    section.slides .window >ol{
+        display: flex;
+    }
+    section.slides .window >ol >li{
+        width:100%;
+        flex-shrink: 0;
+    }
+
+    .controls ol{
+        position: absolute;
+        left:68%;
+        transform: translateX(-50%);
+        bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    .controls >ol >li.active {
+        background: grey;
+    }
+    .controls >ol li{
+        margin: 0 .3em;
+        display: block;
+        background: white;
+        border: none;
+        width:15px;
+        height:15px;
+        line-height:1;
+        border-radius: 50%;
+    }
+    .info ol{
+        display: flex;
+        background: #000;
+        color: white;
+        position: absolute;
+        bottom: 5px;
+        left:50%;
+        transform:translateX(-50%);
+        width: 675px;
+        height: 30px;
+        opacity:0.8;
+        z-index:0;
+    }
+    .info ol >li.active{
+        display: block;
+    }
+    .info ol >li{
+        display: none;
+    }
+}
+section.profile .tags > span {
+    padding: .3em .4em;
+    display: inline-block;
+    margin: 0 1em;
+    cursor: pointer;
+    border:1px solid;
+    border-radius: 8px;
+}
+
+section.album{
+
+}
+section.album h2{
+    text-align: center;
+    margin: 30px 0;
+}
+section.album img{
+    max-width:100%;
+    cursor: pointer;
+}
+section.album ul{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 660px;
+    margin:0 auto;
+}
+
+@media (max-width: 425px) {
+    section.album ul{
+        justify-content: center;
+    }
+    .info{
+        display: none;
+    }
+    .window li img{
+        width:100%;
+        height:auto;
+    }
+}
+@media (min-width: 426px) and (max-width: 768px){
+    section.album ul{
+        justify-content: center;
+    }
+    .info{
+        display: none;
+    }
+    .window li img{
+        width:100%;
+        height:auto;
+    }
+}
+section.album ul>li{
+    width:200px;
+    margin:16px 10px;
+    list-style-type:none
+}
+
