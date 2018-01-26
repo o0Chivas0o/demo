@@ -3,17 +3,40 @@
     padding: 0;
     box-sizing: border-box
 }
-
+.container{
+}
 .window {
     width: 300px;
     height: 300px;
     margin: 20px auto;
+    position: relative;
     overflow: hidden;
+}
+span.pre,
+span.next{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom:50%;
+    z-index: 1;
+    color:red;
+    text-align: center;
+}
+.pre{
+    right:90%;
+}
+.next{
+    left:90%;
+}
+.pre:hover,
+.next:hover{
+    color: blue;
+    cursor: pointer;
 }
 
 .image {
     display: flex;
-    transition: all .5s;
+    transition: all .3s;
 }
 
 .image > img {
