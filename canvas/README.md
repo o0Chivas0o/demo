@@ -11,6 +11,6 @@ PC+移动端可以更改画笔颜色。
 
 ### demo
 
-1. 移动端预览地址：https://o0chivas0o.github.io/demo/canvas/canvas%20PC/
+1. 移动端预览地址：https://o0chivas0o.github.io/demo/canvas/canvas-web/
 
-2. pc+移动端预览地址：https://o0chivas0o.github.io/demo/canvas/canvas%20PC+web/ 
+2. pc+移动端预览地址：https://o0chivas0o.github.io/demo/canvas/canvas-PC+web/ 
