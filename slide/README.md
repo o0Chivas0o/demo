@@ -20,12 +20,12 @@
 
 ### demo
 
-1. slide-1预览:https://o0chivas0o.github.io/new-demo/slide/slide-1
+1. slide-1预览:https://o0chivas0o.github.io/demo/slide/slide-1
 
-2. slide-2预览:https://o0chivas0o.github.io/new-demo/slide/slide-2
+2. slide-2预览:https://o0chivas0o.github.io/demo/slide/slide-2
 
-3. slide-3预览:https://o0chivas0o.github.io/new-demo/slide/slide-3
+3. slide-3预览:https://o0chivas0o.github.io/demo/slide/slide-3
 
-4. slide-4预览:https://o0chivas0o.github.io/new-demo/slide/slide-4
+4. slide-4预览:https://o0chivas0o.github.io/demo/slide/slide-4
 
-5. 苹果风格轮播:https://o0chivas0o.github.io/new-demo/slide/slide-demo
+5. 苹果风格轮播:https://o0chivas0o.github.io/demo/slide/slide-demo
