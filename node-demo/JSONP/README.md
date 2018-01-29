@@ -19,7 +19,7 @@ JSONP 就是 构造一个动态加载的script 去进行跨域请求。
 ```
 JSONP
 
-请求方：frank.com 的前端程序员（浏览器）
+请求方：lee.com 的前端程序员（浏览器）
 响应方：jack.com 的后端程序员（服务器）
 
 1. 请求方创建 script，src 指向响应方，同时传一个查询参数 ?callbackName=yyy
