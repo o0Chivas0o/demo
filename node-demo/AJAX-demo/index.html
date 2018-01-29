@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--suppress ALL, JSAnnotator -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自己实现AJAX</title>
+</head>
+<body>
+<button id="button">Click Me</button>
+<script>
+  window.jquery = function (nodeOrSelector) {
+    let nodes = {
+      0: nodeOrSelector,
+      length: 1
+    }
+    nodes.addClass = function () {}
+    nodes.text = function () {}
+    return nodes
+  }
+  window.$ = window.jquery
+  window.jquery.ajax = function ({url, method, requestBody, headers}) {
+    return new Promise((resolve, reject) => {
+      let xhr = new XMLHttpRequest()
+      xhr.open(method, url, true)
+      for (let key in headers) {
+        let value = headers[key]
+        xhr.setRequestHeader(key, value)
+      }
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve.call(undefined, xhr.responseText)
+          } else if (xhr.status >= 400) {
+            reject.call(undefined, xhr)
+          }
+        }
+      }
+      xhr.send(requestBody)
+    })
+  }
+  button.addEventListener('click', (e) => {
+    window.jquery.ajax({
+      url: '/xxx',
+      method: 'get',
+      headers: {
+        'Content-Type':'application/x-www-url-encoded',
+        'lee': 18
+      }
+    }).then(
+      (text)=>{console.log(text)},
+      (requeset)=>{console.log(requeset)}
+    )
+  })
+</script>
+</body>
+</html>
