@@ -8,6 +8,10 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+}
+.pikachu{
+    position: absolute;
 }
 
 .container{
@@ -152,4 +156,11 @@ body{
     100%{
         transform: rotateZ(5deg) translateX(-50%);
     }
+}
+
+.pre{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: rgba(0,0,0,0.5);
 }
