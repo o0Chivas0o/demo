@@ -11,7 +11,7 @@ function writeCss(prefix, code, fn){
       window.clearInterval(id)
       fn && fn.call()
     }
-  }, 0)
+  }, 50)
 }
 function writeMarkdown(markdown, fn){
   let domPaper = document.querySelector('#paper>.content')
@@ -24,11 +24,11 @@ function writeMarkdown(markdown, fn){
       window.clearInterval(id)
       fn && fn.call()
     }
-  }, 0)
+  }, 25)
 }
 
 let css1 = `/* 
- * 面试官你好，我是XXX
+ * 面试官你好，我是李智颖
  * 只用文字作做我介绍太单调了
  * 我就用代码来介绍吧
  * 首先准备一些样式
@@ -82,49 +82,21 @@ let css2 = `
 `
 let md = `
 # 自我介绍
-我叫 XXX
-1990 年 1 月出生
-XXX 学校毕业
+我叫 李智颖
+1993 年 6 月出生
+武汉科技大学 学校毕业
 自学前端半年
 希望应聘前端开发岗位
 # 技能介绍
 熟悉 JavaScript CSS
 # 项目介绍
-1. XXX 轮播
-2. XXX 简历
-3. XXX 画板
+1. 网易云音乐移动端
+2. 会动的简历
+3. Canvas画板
 # 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
-# 联系方式
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
+- QQ 
+- Email 
+- 手机 
 `
 
 let css3 = `
