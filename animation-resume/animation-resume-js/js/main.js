@@ -4,12 +4,12 @@ function writeCss(prefix, code, fn){
   let n = 0
   let id = setInterval(() => {
     n += 1
-    domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css);
-    styleTag.innerHTML = prefix +  code.substring(0, n)
+    domCode.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css); // 引入的prism库 语法高亮
+    styleTag.innerHTML = prefix +  code.substring(0, n)   // css 内容写进head中style标签
     domCode.scrollTop = domCode.scrollHeight
     if (n >= code.length) {
       window.clearInterval(id)
-      fn && fn.call()
+      fn && fn.call()  // if(fn){fn.call()}
     }
   }, 50)
 }
@@ -136,7 +136,7 @@ function createPaper(fn){
 function convertMarkdownToHtml(fn){
   let div = document.createElement('div')
   div.className = 'html markdown-body'
-  div.innerHTML = marked(md)
+  div.innerHTML = marked(md)  // 引入的marked.js的库
   let markdownContainer = document.querySelector('#paper > .content')
   markdownContainer.replaceWith(div)
   fn && fn.call()
