@@ -18,3 +18,5 @@
 8. 纯CSS绘制的皮卡丘预览地址:https://o0chivas0o.github.io/demo/pikachu/pikachu.html
 
 9. 响应式布局页面预览地址:https://o0chivas0o.github.io/demo/simplestPage
+
+10. 会动的简历预览地址:https://github.com/o0Chivas0o/demo/tree/master/animation-resume
