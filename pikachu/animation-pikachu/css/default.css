@@ -1,0 +1,13 @@
+*{  padding:0;  margin:0;  }
+*{box-sizing:border-box}
+*::before{box-sizing:border-box}
+*::after{box-sizing:border-box}
+main{display: flex;justify-content: space-between;}
+.code-wrapper{
+    width: 45vw;
+    overflow: auto;
+}
+.preview-wrapper{
+    width: 45px;
+    overflow: auto;
+}
