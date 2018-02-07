@@ -2,12 +2,17 @@
 *{box-sizing:border-box}
 *::before{box-sizing:border-box}
 *::after{box-sizing:border-box}
-main{display: flex;justify-content: space-between;}
+body{display: flex;justify-content: space-between;
+    height: 100vh;}
 .code-wrapper{
-    width: 45vw;
-    overflow: auto;
-}
+    width: 48vw;
+    height: 100%;
+    border:1px solid;
+    }
+.code-wrapper > pre{
+    height: 100%;
+    overflow: auto;}
 .preview-wrapper{
-    width: 45px;
-    overflow: auto;
-}
+    height: 100%;
+    width: 48vw;
+    border:1px solid;}

@@ -2,14 +2,12 @@
   function writeCode(prefix,code,fn){
     let container = document.querySelector('#code')
     let styleTag = document.querySelector('#styleTag')
-    let pikachu = document.querySelector('pikachu')
     let n = 0
     let timer = setInterval(()=>{
       n+=1
       container.innerHTML = code.substring(0,n)
       styleTag.innerHTML = code.substring(0,n)
       container.scrollTop = container.scrollHeight
-      pikachu.scrollTop = pikachu.scrollHeight
       if(n>=code.length){
         window.clearInterval(timer)
         fn && fn.call()
@@ -24,7 +22,6 @@
     align-items: center;
     min-height: 100vh;
     position: relative;
-    width: 45vw;
 }
 .container{
     width: 460px;
