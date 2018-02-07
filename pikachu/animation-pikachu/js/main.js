@@ -14,13 +14,14 @@
       }
     },0)
   }
-  let code = `
-  .preview-wrapper{
+  let code = `/*
+  * 首先需要皮卡丘的皮
+  */
+.preview-wrapper{
     background: #FFE600;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     position: relative;
 }
 .container{
@@ -28,6 +29,11 @@
     height: 300px;
     position: relative;
 }
+
+/*
+* 然后画一只鼻子
+*/
+
 .nose{
     width: 20px;
     height: 20px;
@@ -49,6 +55,11 @@
     left: -10px;
     border-radius: 50%;
 }
+
+/*
+*   画皮卡丘的两只眼睛
+*/
+
 .eye{
     position: absolute;
     width: 60px;
@@ -78,6 +89,11 @@
     left: 50%;
     margin-left: 90px ;
 }
+
+/*
+*  画皮卡丘的上嘴唇
+*/
+
 .upperLip{
     position: absolute;
     width:100%;
@@ -119,6 +135,11 @@
     top: 138px;
     overflow: hidden;
 }
+
+/*
+*   画皮卡丘的下嘴唇
+*/
+
 .lowerLip{
     position: absolute;
     border:3px solid;
@@ -135,6 +156,11 @@
     background: #FF485F;
     box-shadow:inset 0 1625px 0 20px #93000A;
 }
+
+/*
+*   画皮卡丘的脸
+*/
+
 .face{
     position: absolute;
     width: 80px;
@@ -146,14 +172,16 @@
 }
 .left-face{
     right:50%;
-    margin-right: 130px;
+    margin-right: 120px;
 }
 .right-face{
     left: 50%;
-    margin-left: 130px;
+    margin-left: 120px;
 }
 
-/* 给pikachu加个动画吧 */
+/* 
+*   给pikachu加个动画吧 
+*/
 
 .nose:hover {
     animation: .1s move 0s infinite alternate;
@@ -166,6 +194,10 @@
         transform: rotateZ(5deg) translateX(-50%);
     }
 }
+
+/*
+*   好了,这只pikachuu送给你
+*/
 `
   writeCode('',code)
 }.call()

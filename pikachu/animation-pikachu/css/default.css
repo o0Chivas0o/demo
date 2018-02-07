@@ -2,17 +2,16 @@
 *{box-sizing:border-box}
 *::before{box-sizing:border-box}
 *::after{box-sizing:border-box}
-body{display: flex;justify-content: space-between;
+body{display: flex;flex-direction:column;
     height: 100vh;}
 .code-wrapper{
-    width: 48vw;
-    height: 100%;
-    border:1px solid;
+    flex: 1;
+    height: 50%;
     }
 .code-wrapper > pre{
+    padding: 10px;
     height: 100%;
     overflow: auto;}
 .preview-wrapper{
-    height: 100%;
-    width: 48vw;
-    border:1px solid;}
+    flex: 1;
+    height: 50%;}
