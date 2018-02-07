@@ -1,6 +1,6 @@
 ### 画一只皮卡丘
 
-1. 画出来的皮卡丘1
+1. 画出来的皮卡丘
 	- 预览地址:https://o0chivas0o.github.io/demo/pikachu/animation-pikachu
 	- 源码地址:https://github.com/o0Chivas0o/demo/tree/master/pikachu/animation-pikachu
 
