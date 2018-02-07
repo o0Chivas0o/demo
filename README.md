@@ -15,7 +15,7 @@
 
 7. canvas画板预览地址:https://github.com/o0Chivas0o/demo/tree/master/canvas
 
-8. 纯CSS绘制的皮卡丘预览地址:https://o0chivas0o.github.io/demo/pikachu/pikachu.html
+8. pikachu项目地址:https://github.com/o0Chivas0o/demo/tree/master/pikachu
 
 9. 响应式布局页面预览地址:https://o0chivas0o.github.io/demo/simplestPage
 
