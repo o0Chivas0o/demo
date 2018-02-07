@@ -15,3 +15,23 @@ body{display: flex;flex-direction:column;
 .preview-wrapper{
     flex: 1;
     height: 50%;}
+.actions{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    right:0;
+}
+.actions>button{
+    text-align: center;
+    width: 48px;
+    height: 32px;
+    border-radius: 8px;
+    margin: 5px 5px;
+}
+.actions>button.active{
+    box-shadow:3px 3px 10px 3px rgba(0,0,0,0.5)
+}
+.actions>button:focus{
+    outline: none;
+}
