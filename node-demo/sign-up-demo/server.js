@@ -42,7 +42,7 @@ let server = http.createServer(function (request, response) {
           // string === 'email='
           let parts = string.split('=')
           let key = parts[0]
-          hash[key] = parts[1] //hash['email'] = 'value'
+          hash[key] = decodeURIComponent(parts[1]) //hash['email'] = 'value'
         })
         // let email = hash['email']
         // let password = hash['password']
@@ -60,10 +60,100 @@ let server = http.createServer(function (request, response) {
           response.statusCode = 400
           response.write('password not match')
         } else {
-          response.statusCode = 200
+          let users = fs.readFileSync('./db/users', 'utf8')
+          try {
+            users = JSON.parse(users)
+          } catch (exception) {
+            users = []
+          }
+          let inUse = false
+          for (let i = 0; i < users.length; i++) {
+            let user = users[i]
+            if (user.email === email) {
+              inUse = true
+              break
+            }
+          }
+          if (inUse) {
+            response.statusCode = 400
+            response.write('email in use')
+          } else {
+            users.push({email, password})
+            let usersString = JSON.stringify(users)
+            fs.writeFileSync('./db/users', usersString)
+            response.statusCode = 200
+          }
         }
         response.end()
       })
+  } else if (path === '/sign_in' && method === 'GET') {
+    let string = fs.readFileSync('./sign_in.html', 'utf8')
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.write(string)
+    response.end()
+  } else if (path === '/sign_in' && method === 'POST') {
+    readBody(request).then(
+      (body) => {
+        let strings = body.split('&')
+        let hash = {}
+        strings.forEach((string) => {
+          let parts = string.split('=')
+          let key = parts[0]
+          hash[key] = decodeURIComponent(parts[1])
+        })
+        let {email, password} = hash
+        let users = fs.readFileSync('./db/users', 'utf8')
+        try {
+          users = JSON.parse(users)
+        } catch (exception) {
+          users = []
+        }
+        let found
+        for (let i = 0; i < users.length; i++) {
+          let user = users[i]
+          if (user.email === email && user.password === password) {
+            found = true
+            break
+          }
+        }
+        if (found) {
+          response.setHeader('set-Cookie', `sign_in_email=${email}`)
+          response.statusCode = 200
+        } else {
+          response.statusCode = 401 // 401 认证失败
+        }
+        response.end()
+      })
+  } else if (path === '/sign_in_success') {
+    let string = fs.readFileSync('./sign_in_success.html', 'utf8')
+    let cookies = request.headers.cookie.split('; ')
+    let hash = {}
+    for (let i = 0; i < cookies.length; i++) {
+      let parts = cookies[i].split('=')
+      let key = parts[0]
+      let value = parts[1]
+      hash[key] = value
+    }
+    let email = hash.sign_in_email
+    let users = fs.readFileSync('./db/users', 'utf8')
+    users = JSON.parse(users)
+    let foundUser
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].email === email) {
+        foundUser = users[i]
+        break
+      }
+    }
+    if (foundUser) {
+      string = string.replace('__password__', foundUser.password)
+    } else {
+      string = string.replace('__password__', '不知道')
+    }
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.write(string)
+    response.end()
   } else if (path === '/main.js') {
     let string = fs.readFileSync('./main.js', 'utf8')
     response.statusCode = 200

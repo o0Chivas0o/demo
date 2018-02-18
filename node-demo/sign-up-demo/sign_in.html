@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>注册</title>
+    <title>登录</title>
     <style>
         * {
             margin: 0;
@@ -14,6 +14,7 @@
         }
 
         body {
+            border: 1px solid red;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -39,8 +40,8 @@
 </head>
 <body>
 <div class="form-wrapper">
-    <h1>注册</h1>
-    <form id="signUpForm">
+    <h1>登录</h1>
+    <form id="signInForm">
         <div class="row">
             <label>邮箱</label>
             <input type="text" name="email">
@@ -52,68 +53,41 @@
             <span class="error"></span>
         </div>
         <div class="row">
-            <label>确认密码</label>
-            <input type="password" name="password_confirmation">
-            <span class="error"></span>
-        </div>
-        <div class="row">
-            <input type="submit" value="注册">
+            <input type="submit" value="登录">
         </div>
     </form>
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
-  let $form = $('#signUpForm')
-  let hash = {}
+  let $form = $('#signInForm')
   $form.on('submit', (e) => {
     e.preventDefault()
-    let need = ['email', 'password', 'password_confirmation']
-    // let hash = {}
-    // hash[email] = $(form).find(`[name=email]`).val()
-    // hash[password] = $(form).find(`[name=password]`).val()
-    // hash[password_confirmation] = $(form).find(`[name=password_confirmation]`).val()
+    let hash = {}
+    let need = ['email', 'password']
     need.forEach((name) => {
-      hash[name] = $form.find(`[name=${name}]`).val()
+      let value
+      value = $form.find(`[name=${name}]`).val()
+      hash[name] = value
     })
     $form.find('.error').each((index, span) => {
       $(span).text('')
     })
     if (hash['email'] === '') {
       $form.find('[name="email"]').siblings('.error')
-        .text('请填写邮箱')
+        .text('填邮箱呀同学')
       return
     }
     if (hash['password'] === '') {
       $form.find('[name="password"]').siblings('.error')
-        .text('请填写密码')
+        .text('填密码呀同学')
       return
     }
-    if (hash['password_confirmation'] === '') {
-      $form.find('[name="password_confirmation"]').siblings('.error')
-        .text('请确认密码')
-      return
-    }
-    if (hash['password_confirmation'] !== hash['password']) {
-      $form.find('[name="password_confirmation"]').siblings('.error')
-        .text('密码不匹配')
-      return
-    }
-    $.post('/sign_up', hash)
-      .then(
-        (response) => {
-          alert('注册成功')
-        },
-        (request) => {
-          // let object = JSON.parse(request.responseText)
-          // let errors = object['errors']
-          // let {errors} = object
-          let {errors} = request.responseJSON
-          if (errors.email && errors.email === 'invalid') {
-            $form.find('[name="email"]').siblings('.error')
-              .text('邮箱格式错误')
-          }
-        }
-      )
+    $.post('/sign_in', hash)
+      .then((response) => {
+        window.location.href = '/sign_in_success'
+      }, (request) => {
+        alert('邮箱与密码不匹配')
+      })
   })
 </script>
 </body>

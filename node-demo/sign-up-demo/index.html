@@ -5,6 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-主页
+<button id="sign_up">注册</button>
+<button id="sign_in">登录</button>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('#sign_up').on('click',()=>{
+      window.location.href = '/sign_up'
+    })
+    $('#sign_in').on('click',()=>{
+      window.location.href = '/sign_in'
+    })
+</script>
 </body>
 </html>
