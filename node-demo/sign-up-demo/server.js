@@ -50,7 +50,7 @@ let server = http.createServer(function (request, response) {
         let {email, password, password_confirmation} = hash
         if (email.indexOf('@') === -1) {
           response.statusCode = 400
-
+          response.setHeader('Content-Type', 'application/json;charset=utf-8')
           response.write(`{
           "errors":{
             "email":"invalid"

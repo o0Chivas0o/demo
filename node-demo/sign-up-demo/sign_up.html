@@ -83,7 +83,7 @@
           // let object = JSON.parse(request.responseText)
           // let errors = object['errors']
           // let {errors} = object
-          let {errors} = JSON.parse(request.responseText)
+          let {errors} = request.responseJSON
           console.log(errors)
         }
       )
