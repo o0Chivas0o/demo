@@ -5,6 +5,7 @@ let keys = {
   2: ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
   length: 3
 }
+
 let hash = {
   q: 'qq.com',
   w: 'weibo.com',
