@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>路由</title>
+    <style>
+        x-tab{display: block;}
+        x-tab > .nav > li.active{background: red;}
+        x-tab > .content > li {display: none;}
+        x-tab > .content > li.active{display: block;}
+    </style>
+</head>
+<body>
+<x-tab>
+    <ol class="nav">
+        <li class="active">tab 1</li>
+        <li>tab 2</li>
+    </ol>
+    <ol class="content">
+        <li class="active">content 1</li>
+        <li>content 2</li>
+    </ol>
+</x-tab>
+<script src="../jquery-3.3.1.min.js"></script>
+<script>
+    let index = location.hash || '#0' // 2 获取hash
+    index = index.substring(1) // 3 读取hash
+    $('x-tab > .nav > li').eq(index).addClass('active')
+      .siblings().removeClass('active')
+    $('x-tab > .content > li').eq(index).addClass('active')
+      .siblings().removeClass('active')
+
+    $('x-tab').on('click','.nav>li',(e)=>{
+      let $li = $(e.currentTarget)
+      $li.addClass('active')
+        .siblings().removeClass('active')
+      let index = $li.index()
+      location.hash = index // 1 设置hash
+      $li.closest('x-tab').find('.content > li').eq(index)
+        .addClass('active')
+        .siblings().removeClass('active')
+    })
+</script>
+</body>
+</html>
