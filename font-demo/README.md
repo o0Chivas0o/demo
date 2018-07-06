@@ -1,0 +1,1 @@
+出现`OTS parsing error: invalid version tag`报错情况,可能是字体包出现问题,常规体无法使用,黑体正常.
