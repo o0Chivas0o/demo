@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+  // 创建一个跟画布等比例的 canvas
+  const width = 100
+  const height = ~~(width * this.height / this.width) // this.width , this.height 说整个画布的尺寸
+  const offscreenCanvas = document.createElement('canvas')
+  const offscreenCanvasCtx = offscreenCanvas.getContext('2d')
+  offscreenCanvas.setAttribute('width', width)
+  offscreenCanvas.setAttribute('height', height)
+
+  // 在这离屏 canvas 中将我们想要的文字 textAll 绘制出来后，再计算它合适的尺寸
+  offscreenCanvasCtx.fillStyle = '#000'
+  offscreenCanvasCtx.font = 'bold 10px Arial'
+  const measure = offscreenCanvasCtx.measureText(textAll) // 测量文字，用来获取宽度
+  const size = 0.8
+  // 宽高分别达到屏幕0.8时的size
+  const fSize = Math.min(height * size * 10 / lineHeight, width * size * 10 / measure.width)  // 10像素字体行高 lineHeight=7 magic
+  offscreenCanvasCtx.font = `bold ${fSize}px Arial`
+
+  // 根据计算后的字体大小，在将文字摆放到适合的位置，文字的坐标起始位置在左下方
+  const measureResize = offscreenCanvasCtx.measureText(textAll)
+  // 文字起始位置在左下方
+  let left = (width - measureResize.width) / 2
+  const bottom = (height + fSize / 10 * lineHeight) / 2
+  offscreenCanvasCtx.fillText(textAll, left, bottom)
+
+</script>
+</html>
